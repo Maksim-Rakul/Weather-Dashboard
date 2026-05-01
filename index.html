@@ -12,6 +12,9 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
@@ -54,6 +57,80 @@
         </div>
       </div>
     </header>
+
+    <main>
+      <section class="weater">
+        <div class="container">
+          <div class="weather_today">
+            <h2 class="weather_today_city">Name of city</h2>
+            <p class="weather_today_date">Date</p>
+
+            <div class="weather_today_degree">
+              <svg class="weather_today_icon">
+                <use class="js-today-icon" href="./src/images/main_weather_icon.svg"></use>
+              </svg>
+              <i class="owi owi-04d"></i>
+              <div class="weather_today_degree_wrapper">
+                <p class="weather_today_temp"></p>
+                <p class="weather_today_type"></p>
+                <p class="weather_today_feels">Feels like <span class="js-feels"></span>°</p>
+              </div>
+            </div>
+
+            <ul class="weather_today_list">
+              <li class="weather_today_item">
+                <div class="weather_today_item_wrapper">
+                  <svg class="weather_today_item_icon">
+                    <use href="./src/images/water.svg"></use>
+                  </svg>
+                  <p class="weather_today_item_type">Humidity</p>
+                </div>
+
+                <p class="weather_today_item_value humidity"></p>
+              </li>
+
+              <li class="weather_today_item">
+                <div class="weather_today_item_wrapper">
+                  <svg class="weather_today_item_icon">
+                    <use href="./src/images/wind.svg"></use>
+                  </svg>
+                  <p class="weather_today_item_type">Wind</p>
+                </div>
+
+                <p class="weather_today_item_value wind"></p>
+              </li>
+
+              <li class="weather_today_item">
+                <div class="weather_today_item_wrapper">
+                  <svg class="weather_today_item_icon">
+                    <use href="./src/images/bar.svg"></use>
+                  </svg>
+                  <p class="weather_today_item_type">Pressure</p>
+                </div>
+
+                <p class="weather_today_item_value pressure"></p>
+              </li>
+
+              <li class="weather_today_item">
+                <div class="weather_today_item_wrapper">
+                  <svg class="weather_today_item_icon">
+                    <use href="./src/images/sun.svg"></use>
+                  </svg>
+                  <p class="weather_today_item_type">Visibility</p>
+                </div>
+
+                <p class="weather_today_item_value visibility"></p>
+              </li>
+            </ul>
+
+            <div class="time">
+              <p>08:20</p>
+              <p>22:20</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
