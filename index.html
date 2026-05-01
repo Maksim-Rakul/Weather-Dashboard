@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header_wrapper">
+          <form class="header_form">
+            <div class="header_input_wrapper">
+              <input
+                class="header_input"
+                type="text"
+                name="city"
+                id="city"
+                placeholder="Find your city..."
+              />
+              <svg class="header_input_icon">
+                <use href="./src/images/find-icon.svg"></use>
+              </svg>
+            </div>
+            <button class="header_search_btn" type="submit">
+              <svg class="header_search_btn-icon">
+                <use href="./src/images/map-icon.svg"></use>
+              </svg>
+            </button>
+          </form>
+          <nav class="header_nav">
+            <div class="header_nav_wrapper">
+              <div class="switcher_wrapper">
+                <input id="switcher" class="header_switcher" type="checkbox" />
+                <label for="switcher" class="header_switcher_label">
+                  <span>°C</span><span>°F</span>
+                </label>
+              </div>
+              <button class="header_nav_theme_btn">
+                <svg class="header_theme_icon">
+                  <use href="./src/images/theme-icon.svg"></use>
+                </svg>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
