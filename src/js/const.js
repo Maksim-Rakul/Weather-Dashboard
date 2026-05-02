@@ -22,3 +22,6 @@ export const months = [
   "November",
   "December",
 ];
+
+export const WEATHER_KEY = "weather";
+export const LOCATION_KEY = 'location'

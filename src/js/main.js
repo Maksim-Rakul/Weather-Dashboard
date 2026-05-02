@@ -1,17 +1,24 @@
 import { getWeater } from "./api";
 import { days } from "./const";
-import { handlerSubmit } from "./handlers";
+import { dayClickHadler, handlerSubmit } from "./handlers";
 import { formatWeatherAerr } from "./helpers";
 import * as refs from "./refs";
-import render from "./render";
+import { render, renderDays } from "./render";
+import { getLocationStorage, setWeatherStorage } from "./storage";
 
 let day = 0;
+const cityName = getLocationStorage();
 
-getWeater().then((data) => {
+getWeater(cityName).then((data) => {
   const dateArr = formatWeatherAerr(data);
 
-  refs.nameOfCity.textContent = data.city.name;
-  render(dateArr[day]);
+  setWeatherStorage(dateArr);
+
+  render(dateArr[day], data.city.name);
+  renderDays(dateArr);
+
+  refs.daysList.children[0].classList.add("chosen_day");
+  refs.daysList.addEventListener("click", dayClickHadler);
 });
 
 refs.form.addEventListener("submit", handlerSubmit);

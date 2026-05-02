@@ -1,0 +1,20 @@
+<svg class="weather-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonGradient" x1="27.8424" y1="1.99714" x2="27.8424" y2="37.6829" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FA6C21"/>
+      <stop offset="1" stop-color="#FFD358"/>
+    </linearGradient>
+    <linearGradient id="cloudGradient" x1="4" y1="24" x2="4" y2="43.4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FD5FF"/>
+      <stop offset="1" stop-color="#4CAFFF"/>
+    </linearGradient>
+  </defs>
+  
+  <path fill-rule="evenodd" clip-rule="evenodd" 
+    d="M24.4184 2.03961C26.2223 1.67517 27.5193 3.73492 26.4112 5.20427C24.9222 7.17855 24.1053 9.5765 24.1053 12.1039C24.1053 18.4407 29.2422 23.5776 35.5789 23.5776C38.106 23.5776 40.504 22.7608 42.4781 21.2726C43.9474 20.1649 46.0067 21.4619 45.6424 23.2656C43.9592 31.5995 36.6055 37.6829 28 37.6829C18.0589 37.6829 10 29.624 10 19.6829C10 11.0771 16.0835 3.72348 24.4184 2.03961Z" 
+    fill="url(#moonGradient)"/>
+  
+  <path fill-rule="evenodd" clip-rule="evenodd" 
+    d="M13.7 24C17.4459 24 20.7613 26.1403 22.3717 29.3475L22.458 29.526L22.7094 29.5082L23.05 29.5C26.8884 29.5 30 32.6116 30 36.45C30 40.2884 26.8884 43.4 23.05 43.4H13.15C12.9996 43.4 12.853 43.3834 12.712 43.3519L12.698 43.347L12.4713 43.3228C7.75979 42.7272 4.13635 38.768 4.00376 33.9723L4 33.7C4 28.3428 8.34284 24 13.7 24Z" 
+    fill="url(#cloudGradient)"/>
+</svg>

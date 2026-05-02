@@ -1,4 +1,5 @@
 import { days, months } from "./const";
+import * as refs from "./refs";
 
 export function formatDate(date) {
   const newDate = new Date(date);
@@ -27,4 +28,8 @@ export function formatWeatherAerr(data) {
   });
 
   return daysOfWeek;
+}
+
+export function addFirstElementClass() {
+  refs.daysList.children[0].classList.add("chosen_day");
 }

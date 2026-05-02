@@ -1,0 +1,12 @@
+<svg class="weather-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonGradient" x1="23.8129" y1="3.37391" x2="23.8129" y2="45" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FA6C21"/>
+      <stop offset="1" stop-color="#FFD358"/>
+    </linearGradient>
+  </defs>
+  
+  <path fill-rule="evenodd" clip-rule="evenodd" 
+    d="M19.8201 3.4164C21.6239 3.0519 22.9211 5.11127 21.8133 6.58072C19.9969 8.99012 19 11.9168 19 15C19 22.732 25.268 29 33 29C36.0832 29 39.01 28.003 41.4189 26.187C42.8883 25.0791 44.9477 26.3763 44.5833 28.18C42.6189 37.9029 34.0396 45 24 45C12.402 45 3 35.598 3 24C3 13.9604 10.0971 5.38119 19.8201 3.4164Z" 
+    fill="url(#moonGradient)"/>
+</svg>

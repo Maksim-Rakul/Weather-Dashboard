@@ -1,0 +1,15 @@
+<svg class="weather-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="weatherGradient" x1="2" y1="8" x2="2" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8fd5ff"/>
+      <stop offset="1" stop-color="#4cafff"/>
+    </linearGradient>
+  </defs>
+  
+  <path 
+    fill="url(#weatherGradient)" 
+    clip-rule="evenodd" 
+    d="M18 8C9.1634 8 2 15.1634 2 24l34e-4 0.3313c0.1638 8.0419 6.2792 14.6844 14.2009 15.5689l0.2637 0.0268 0.0924 0.0245C16.7019 39.9833 16.849 40 17 40h18l0.2943-4e-3C41.262 39.8234 46 34.9545 46 29c0-6.0751-4.9249-11-11-11l-0.4317 83e-4c-0.4305 0.0167-0.8572 0.0583-1.2784 0.1242L32.915 18.198l-0.1037-0.2622C30.3965 12.033 24.6037 8 18 8z" 
+    fill-rule="evenodd"
+  />
+</svg>

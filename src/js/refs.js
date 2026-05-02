@@ -1,4 +1,5 @@
 export const form = document.querySelector(".header_form");
+export const weatherToday = document.querySelector(".weather_today_wrapper");
 
 export const nameOfCity = document.querySelector(".weather_today_city");
 export const nowDate = document.querySelector(".weather_today_date");
@@ -11,3 +12,5 @@ export const humidity = document.querySelector(".humidity");
 export const wind = document.querySelector(".wind");
 export const pressure = document.querySelector(".pressure");
 export const visibility = document.querySelector(".visibility");
+
+export const daysList = document.querySelector(".weather_days_list");
