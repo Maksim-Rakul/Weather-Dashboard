@@ -5,6 +5,7 @@ import {
   formatDate,
   formatWeatherAerr,
   khelsi,
+  undisableTempBtn,
 } from "./helpers";
 import * as refs from "./refs";
 import { setLocationStorage, setWeatherStorage } from "./storage";
@@ -19,8 +20,6 @@ export function render(
   },
   name,
 ) {
-  console.log(dt_txt);
-
   const mainRender = `
     <div class="weather_today">
             <h2 class="weather_today_city">${name}</h2>
@@ -183,6 +182,7 @@ export function renderMainContainer(data) {
   render(dateArr[0], data.city.name);
   renderDays(dateArr);
   renderValues(dateArr[0]);
+  undisableTempBtn();
 
   refs.daysList.children[0].classList.add("chosen_day");
 }

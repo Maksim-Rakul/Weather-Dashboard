@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_KEY } from "./const";
+import iziToast from "izitoast";
 
 export async function getWeater(cityName = "Kyiv", lat = "", lon = "") {
   try {
@@ -16,6 +17,8 @@ export async function getWeater(cityName = "Kyiv", lat = "", lon = "") {
     );
     return response.data;
   } catch (error) {
-    console.error(error.message);
+    iziToast.error({
+      title: "Server error, please, try later",
+    });
   }
 }

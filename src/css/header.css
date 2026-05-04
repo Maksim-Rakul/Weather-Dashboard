@@ -77,9 +77,6 @@
   height: 22px;
 }
 
-.header_nav {
-}
-
 .header_nav_wrapper {
   display: flex;
 }
@@ -104,7 +101,12 @@
   );
   background-size: 200% 100%;
   background-position: 50% 0;
-  transition: background-position 250ms ease-in-out;
+  transition: background-position 250ms ease-in-out, opacity 250ms ease-in-out;
+  opacity: 0.9;
+}
+
+.header_switcher_label:hover {
+  opacity: 1;
 }
 
 .header_switcher {
@@ -124,6 +126,12 @@
   justify-content: center;
   border-radius: 10px;
   margin-left: 41px;
+  transition: background-color 250ms ease-in-out;
+
+}
+
+.header_nav_theme_btn:hover {
+  background-color: rgb(42, 81, 189);
 }
 
 .header_theme_icon {

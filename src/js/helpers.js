@@ -114,3 +114,11 @@ export function convertVisibility(visibility) {
     return "Excellent";
   }
 }
+
+export function disableTempBtn() {
+  refs.switcherDegree.classList.add("disabled");
+}
+
+export function undisableTempBtn() {
+  refs.switcherDegree.classList.remove("disabled");
+}

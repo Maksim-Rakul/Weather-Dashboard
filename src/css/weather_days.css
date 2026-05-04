@@ -36,6 +36,11 @@ color: rgba(255, 255, 255, 0.5);
   min-width: 100px;
   color: #fff;
   cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+
+.weather_days_item:hover {
+  background-color: #3b83f66c;
 }
 
 .weather_days_day {
@@ -62,6 +67,8 @@ color: rgba(255, 255, 255, 0.5);
   opacity: 0.7;
 }
 
-.chosen_day {
-  background: #3b82f6;
+.chosen_day,.chosen_day:hover {
+  background-color: #3b82f6;
 }
+
+

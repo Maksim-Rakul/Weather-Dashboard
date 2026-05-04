@@ -55,6 +55,10 @@ body.theme-light .header_nav_theme_btn {
   background-color: #fff;
 }
 
+body.theme-light .header_nav_theme_btn:hover {
+    background-color: rgb(42, 81, 189);
+}
+
 body.theme-light .values_item {
   background-color: #fff;
   color: rgb(99, 99, 99);
@@ -75,3 +79,9 @@ body.theme-light .header_switcher_label {
 body.theme-light .checked {
   color: #fff;
 }
+
+body.theme-light .write_message {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+

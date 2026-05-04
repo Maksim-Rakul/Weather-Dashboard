@@ -7,7 +7,13 @@ import {
   handleLoc,
   handlerSubmit,
 } from "./handlers";
-import { hideLoader, hideMessage, showLoader, showMessage } from "./helpers";
+import {
+  disableTempBtn,
+  hideLoader,
+  hideMessage,
+  showLoader,
+  showMessage,
+} from "./helpers";
 import * as refs from "./refs";
 import {
   render,
@@ -38,6 +44,7 @@ if (getFahrenheit() !== "") {
 hideLoader();
 
 if (cityName === "") {
+  disableTempBtn();
   showMessage();
 } else {
   hideMessage();
@@ -49,7 +56,9 @@ if (cityName === "") {
       renderMainContainer(data);
     })
     .catch((error) => {
-      console.log(error);
+      iziToast.error({
+        title: "Server error, please, try later",
+      });
     })
     .finally(() => {
       hideLoader();

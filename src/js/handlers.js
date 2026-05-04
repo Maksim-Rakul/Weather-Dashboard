@@ -20,7 +20,6 @@ import {
 import {
   cleareFahrenheit,
   cleareTheme,
-  clearWeatherStorage,
   getFahrenheit,
   getLocationStorage,
   getTheme,
@@ -68,7 +67,9 @@ export async function handlerSubmit(event) {
 
     addFirstElementClass();
   } catch (error) {
-    console.log(error.message);
+    iziToast.error({
+      title: "Server error, please, try later",
+    });
   } finally {
     hideLoader();
   }
