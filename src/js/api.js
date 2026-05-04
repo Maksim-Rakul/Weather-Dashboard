@@ -5,7 +5,7 @@ import iziToast from "izitoast";
 export async function getWeater(cityName = "Kyiv", lat = "", lon = "") {
   try {
     const response = await axios(
-      `http://api.openweathermap.org/data/2.5/forecast?id=524901&exclude=hourly`,
+      `https://api.openweathermap.org/data/2.5/forecast?id=524901&exclude=hourly`,
       {
         params: {
           appid: API_KEY,
