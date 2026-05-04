@@ -1,7 +1,16 @@
+.weather_info {
+  display: none;
+font-weight: 400;
+font-size: 10px;
+color: rgba(255, 255, 255, 0.5);
+}
+
 .weather_days {
   border-radius: 30px;
-  background: rgba(23, 32, 65, 0.8);
+  background-color: rgba(23, 32, 65, 0.8);
   padding: 34px;
+  margin-bottom: 40px;
+  transition: background-color 250ms ease-in-out;
 }
 
 .weather_days_title {
@@ -25,13 +34,13 @@
   flex-direction: column;
   align-items: center;
   min-width: 100px;
+  color: #fff;
   cursor: pointer;
 }
 
 .weather_days_day {
   font-weight: 500;
   font-size: 14px;
-  color: #fff;
   margin-bottom: 14px;
 }
 
@@ -44,14 +53,13 @@
 .weather_days_temp {
   font-weight: 500;
   font-size: 14px;
-  color: #fff;
   margin-bottom: 8px;
 }
 
 .weather_days_feel {
   font-weight: 500;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
 }
 
 .chosen_day {

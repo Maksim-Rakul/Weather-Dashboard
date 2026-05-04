@@ -1,4 +1,4 @@
-import { LOCATION_KEY, WEATHER_KEY } from "./const";
+import { FAHRENHEIT_KEY, LOCATION_KEY, THEME_KEY, WEATHER_KEY } from "./const";
 
 export function getWeatherStorage() {
   return JSON.parse(localStorage.getItem(WEATHER_KEY)) || [];
@@ -22,4 +22,28 @@ export function setLocationStorage(location) {
 
 export function clearLocationStorage() {
   localStorage.removeItem(LOCATION_KEY);
+}
+
+export function setLightTheme() {
+  localStorage.setItem(THEME_KEY, JSON.stringify("light"));
+}
+
+export function getTheme() {
+  return JSON.parse(localStorage.getItem(THEME_KEY)) || "";
+}
+
+export function cleareTheme() {
+  localStorage.removeItem(THEME_KEY);
+}
+
+export function setFahrenheit() {
+  localStorage.setItem(FAHRENHEIT_KEY, JSON.stringify("fahrenheit"));
+}
+
+export function getFahrenheit() {
+  return JSON.parse(localStorage.getItem(FAHRENHEIT_KEY)) || "";
+}
+
+export function cleareFahrenheit() {
+  localStorage.removeItem(FAHRENHEIT_KEY);
 }

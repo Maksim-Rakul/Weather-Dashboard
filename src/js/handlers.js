@@ -1,30 +1,60 @@
 import { getWeater } from "./api";
-import { addFirstElementClass, formatWeatherAerr } from "./helpers";
-import * as refs from "./refs";
-import { render, renderDays } from "./render";
 import {
+  addFirstElementClass,
+  formatWeatherAerr,
+  hideLoader,
+  hideMessage,
+  showLoader,
+  showMessage,
+} from "./helpers";
+import * as refs from "./refs";
+import { render, renderDays, renderValues } from "./render";
+import {
+  cleareFahrenheit,
+  cleareTheme,
   clearWeatherStorage,
+  getFahrenheit,
   getLocationStorage,
+  getTheme,
   getWeatherStorage,
+  setFahrenheit,
+  setLightTheme,
   setLocationStorage,
   setWeatherStorage,
 } from "./storage";
 
 export async function handlerSubmit(event) {
   event.preventDefault();
-
-  clearWeatherStorage();
+  showLoader();
+  hideMessage();
 
   const cityName = event.target.elements.city.value.trim();
-  const weather = await getWeater(cityName);
+  try {
+    const weather = await getWeater(cityName);
 
-  const dateArr = formatWeatherAerr(weather);
-  setWeatherStorage(dateArr);
-  setLocationStorage(cityName);
+    if (!weather) {
+      alert("We don't find it");
+      return;
+    }
 
-  render(dateArr[0], cityName);
-  renderDays(dateArr);
-  addFirstElementClass();
+    refs.weatherInfo.classList.add("is-vissible");
+
+    const dateArr = formatWeatherAerr(weather);
+    setWeatherStorage(dateArr);
+    setLocationStorage(cityName);
+
+    render(dateArr[0], cityName);
+    renderDays(dateArr);
+    renderValues(dateArr[0]);
+
+    addFirstElementClass();
+  } catch (error) {
+    console.log(error.message);
+  } finally {
+    hideLoader();
+  }
+
+  event.target.reset();
 }
 
 export function dayClickHadler(event) {
@@ -41,5 +71,38 @@ export function dayClickHadler(event) {
   const cityName = getLocationStorage();
   const chosenDay = days[+parent.dataset.id];
   render(chosenDay, cityName);
+  renderValues(chosenDay);
+
   parent.classList.add("chosen_day");
+}
+
+export function changeTheme() {
+  refs.body.classList.toggle("theme-light");
+
+  if (getTheme() === "") {
+    setLightTheme();
+  } else {
+    cleareTheme();
+  }
+}
+
+export function degreeClick() {
+  refs.celsius.classList.toggle("checked");
+  refs.fahrenheit.classList.toggle("checked");
+
+  if (refs.fahrenheit.classList.contains("checked")) {
+    console.log("f");
+  } else {
+    console.log("c");
+  }
+
+  if (getFahrenheit() === "") {
+    setFahrenheit();
+    renderDays(getWeatherStorage());
+    addFirstElementClass();
+  } else {
+    cleareFahrenheit();
+    renderDays(getWeatherStorage());
+    addFirstElementClass();
+  }
 }

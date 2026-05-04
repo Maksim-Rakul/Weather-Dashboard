@@ -24,4 +24,6 @@ export const months = [
 ];
 
 export const WEATHER_KEY = "weather";
-export const LOCATION_KEY = 'location'
+export const LOCATION_KEY = "location";
+export const THEME_KEY = "theme";
+export const FAHRENHEIT_KEY = 'fahrenheit'

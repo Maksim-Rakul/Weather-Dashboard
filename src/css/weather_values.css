@@ -1,0 +1,61 @@
+.values_list {
+  display: flex;
+  gap: 15px;
+}
+
+.values_item {
+  background: rgba(23, 32, 65, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  width: 158px;
+}
+
+.values_subtitle_wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.values_icon {
+  width: 20px;
+  height: 20px;
+}
+
+.values_subtitle {
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.values_val {
+  font-weight: 500;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.values_type {
+  font-weight: 600;
+  font-size: 15px;
+  color: #3b82f6;
+  margin-bottom: 8px;
+}
+
+progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background: rgba(63, 63, 63, 0.62);
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #3b82f6;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}

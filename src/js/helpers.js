@@ -1,5 +1,6 @@
 import { days, months } from "./const";
 import * as refs from "./refs";
+import { getFahrenheit } from "./storage";
 
 export function formatDate(date) {
   const newDate = new Date(date);
@@ -11,7 +12,13 @@ export function formatDate(date) {
 }
 
 export function khelsi(temp) {
-  return Math.floor(temp - 273.15);
+  const fahrenheit = getFahrenheit();
+
+  if (fahrenheit === "") {
+    return Math.floor(temp - 273.15);
+  } else {
+    return Math.floor((temp - 273.15) * 1.8 + 32);
+  }
 }
 
 export function formatWeatherAerr(data) {
@@ -32,4 +39,34 @@ export function formatWeatherAerr(data) {
 
 export function addFirstElementClass() {
   refs.daysList.children[0].classList.add("chosen_day");
+}
+
+export function showLoader() {
+  refs.loader.classList.add("is-vissible");
+}
+
+export function hideLoader() {
+  refs.loader.classList.remove("is-vissible");
+}
+
+export function showMessage() {
+  refs.writeMessage.classList.add("is-vissible");
+}
+
+export function hideMessage() {
+  refs.writeMessage.classList.remove("is-vissible");
+}
+
+export function converClouds(cloud) {
+  if (cloud === 0) {
+    return "clear";
+  } else if (cloud >= 1 && cloud < 20) {
+    return "mostly clear";
+  } else if (cloud >= 20 && cloud < 50) {
+    return "changeable cloudiness";
+  } else if (cloud >= 50 && cloud < 90) {
+    return "cloudy";
+  } else {
+    return "darkly";
+  }
 }

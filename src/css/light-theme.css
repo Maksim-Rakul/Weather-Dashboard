@@ -1,0 +1,73 @@
+body.theme-light {
+  background-color: #ebf3ff;
+}
+
+body.theme-light .header_switcher_label {
+  color: black;
+}
+
+body.theme-light .weather_today {
+  background-color: #29caff;
+}
+
+body.theme-light .weather_today_degree {
+  border-color: white;
+}
+
+body.theme-light .weather_today_date {
+  color: white;
+}
+
+body.theme-light .weather_today_feels {
+  color: white;
+}
+
+body.theme-light .weather_today_item_type {
+  color: white;
+}
+
+body.theme-light .time {
+  color: white;
+  border-color: white;
+}
+
+body.theme-light .weather_days {
+  background-color: #fff;
+}
+
+body.theme-light .weather_days_title {
+  color: rgb(99, 99, 99);
+}
+
+body.theme-light .weather_days_item {
+  color: rgb(99, 99, 99);
+}
+
+body.theme-light .chosen_day {
+  color: white;
+}
+
+body.theme-light .header_nav_theme_btn {
+  background-color: #fff;
+}
+
+body.theme-light .values_item {
+  background-color: #fff;
+  color: rgb(99, 99, 99);
+}
+
+body.theme-light .values_val {
+  color: rgb(99, 99, 99);
+}
+
+body.theme-light progress::-webkit-progress-bar {
+  background: rgba(63, 63, 63, 0.22);
+}
+
+body.theme-light .header_switcher_label {
+  color: rgb(99, 99, 99);
+}
+
+body.theme-light .checked {
+  color: #fff;
+}

@@ -5,3 +5,13 @@
 @import url(./header.css);
 @import url(./weather_today.css);
 @import url(./weather_days.css);
+@import url(./weather_values.css);
+@import url(./light-theme.css);
+
+.is-vissible {
+  display: block; 
+}
+
+.is-hidden {
+    display: none;
+}

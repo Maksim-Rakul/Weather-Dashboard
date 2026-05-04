@@ -1,4 +1,4 @@
-import { formatDate, khelsi } from "./helpers";
+import { converClouds, formatDate, khelsi } from "./helpers";
 import * as refs from "./refs";
 import { setLocationStorage } from "./storage";
 
@@ -14,19 +14,6 @@ export function render(
   },
   name,
 ) {
-  // refs.todayIcon.children[0].href.baseVal = `./src/images/weather_icons/${icon}.svg`;
-  // refs.todayIcon.setAttribute("width", "135");
-  // refs.todayIcon.setAttribute("height", "135");
-
-  // refs.nowDate.textContent = formatDate(dt_txt);
-  // refs.temp.textContent = `${khelsi(temp)}°`;
-  // refs.typeWeather.textContent = main;
-  // refs.feelsTemp.textContent = khelsi(feels_like);
-  // refs.humidity.textContent = `${humidity}%`;
-  // refs.wind.textContent = `${speed}m/s`;
-  // refs.pressure.textContent = `${pressure}gPa`;
-  // refs.visibility.textContent = `${visibility / 1000} Kh`;
-
   const mainRender = `
     <div class="weather_today">
             <h2 class="weather_today_city">${name}</h2>
@@ -52,7 +39,7 @@ export function render(
                   <p class="weather_today_item_type">Humidity</p>
                 </div>
 
-                <p class="weather_today_item_value humidity"></p>
+                <p class="weather_today_item_value humidity">${humidity} %</p>
               </li>
 
               <li class="weather_today_item">
@@ -63,7 +50,7 @@ export function render(
                   <p class="weather_today_item_type">Wind</p>
                 </div>
 
-                <p class="weather_today_item_value wind"></p>
+                <p class="weather_today_item_value wind">${speed} m/s</p>
               </li>
 
               <li class="weather_today_item">
@@ -74,7 +61,7 @@ export function render(
                   <p class="weather_today_item_type">Pressure</p>
                 </div>
 
-                <p class="weather_today_item_value pressure"></p>
+                <p class="weather_today_item_value pressure">${pressure} hPa</p>
               </li>
 
               <li class="weather_today_item">
@@ -85,7 +72,7 @@ export function render(
                   <p class="weather_today_item_type">Visibility</p>
                 </div>
 
-                <p class="weather_today_item_value visibility"></p>
+                <p class="weather_today_item_value visibility">${visibility / 1000} km</p>
               </li>
             </ul>
 
@@ -100,8 +87,6 @@ export function render(
 }
 
 export function renderDays(arr) {
-  console.log(arr);
-
   const renderStr = arr
     .map(
       ({ day, weather: [{ icon }], main: { temp_max, temp_min } }, index) => {
@@ -119,7 +104,65 @@ export function renderDays(arr) {
     )
     .join("");
 
-  console.log(renderStr);
-
   refs.daysList.innerHTML = renderStr;
+}
+
+export function renderValues({
+  main: { humidity },
+  visibility,
+  wind: { speed },
+  clouds: { all },
+}) {
+  const renderStr = `
+    <li class="values_item">
+      <div class="values_subtitle_wrapper">
+        <svg class="values_icon">
+          <use href="./src/images/weather_icons/50d.svg"></use>
+        </svg>
+        <h3 class="values_subtitle">Wind</h3>
+      </div>
+      <p class="values_val">${speed}</p>
+      <p class="values_type">m/s</p>
+      <p>Good</p>
+    </li>
+
+    <li class="values_item">
+      <div class="values_subtitle_wrapper">
+        <svg class="values_icon">
+          <use href="./src/images/water.svg"></use>
+        </svg>
+        <h3 class="values_subtitle">Humidity</h3>
+      </div>
+      <p class="values_val">${humidity}</p>
+      <p class="values_type">%</p>
+
+      <progress id="file" value="${humidity}" max="100">  </progress>
+    </li>
+
+    <li class="values_item">
+      <div class="values_subtitle_wrapper">
+        <svg class="values_icon">
+          <use href="./src/images/weather_icons/01d.svg"></use>
+        </svg>
+        <h3 class="values_subtitle">Visibility</h3>
+      </div>
+      <p class="values_val">30</p>
+      <p class="values_type">km</p>
+      <p>Good</p>
+    </li>
+
+    <li class="values_item">
+      <div class="values_subtitle_wrapper">
+        <svg class="values_icon">
+          <use href="./src/images/weather_icons/04d.svg"></use>
+        </svg>
+        <h3 class="values_subtitle">Cloudiness</h3>
+      </div>
+      <p class="values_val">${all}</p>
+      <p class="values_type">%</p>
+      <p>${converClouds(all)}</p>
+    </li>
+  `;
+
+  refs.valuesList.innerHTML = renderStr;
 }
