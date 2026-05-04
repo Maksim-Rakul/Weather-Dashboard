@@ -26,7 +26,7 @@ export function render(
             <p class="weather_today_date">${formatDate(dt_txt)}</p>
 
             <div class="weather_today_degree">
-            <img class="weather_today_icon" src="/src/public/images/weather_icons/${icon}.svg" alt="weather icon">
+            <img class="weather_today_icon" src="/images/weather_icons/${icon}.svg" alt="weather icon">
 
               <div class="weather_today_degree_wrapper">
                 <p class="weather_today_temp">${khelsi(temp)}°</p>
