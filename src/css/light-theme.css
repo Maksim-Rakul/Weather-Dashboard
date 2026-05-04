@@ -3,7 +3,11 @@ body.theme-light {
 }
 
 body.theme-light .header_switcher_label {
-  color: black;
+  color: rgb(99, 99, 99);
+}
+
+body.theme-light .header_switcher_label span:checked {
+    color: white;
 }
 
 body.theme-light .weather_today {

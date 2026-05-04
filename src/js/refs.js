@@ -2,6 +2,10 @@ export const body = document.querySelector("body");
 
 export const switcherTheme = document.querySelector(".header_nav_theme_btn");
 export const switcherDegree = document.querySelector(".header_switcher_label");
+export const switcherInput = document.querySelector(".header_switcher");
+export const searchByLocationBtn = document.querySelector(
+  ".header_search_btn-loc",
+);
 
 export const form = document.querySelector(".header_form");
 export const weatherToday = document.querySelector(".weather_today_wrapper");

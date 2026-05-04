@@ -20,25 +20,33 @@
     <header class="header">
       <div class="container">
         <div class="header_wrapper">
-          <form class="header_form">
-            <div class="header_input_wrapper">
-              <input
-                class="header_input"
-                type="text"
-                name="city"
-                id="city"
-                placeholder="Find your city..."
-              />
-              <svg class="header_input_icon">
-                <use href="./src/images/find-icon.svg"></use>
-              </svg>
-            </div>
-            <button class="header_search_btn" type="submit">
-              <svg class="header_search_btn-icon">
-                <use href="./src/images/map-icon.svg"></use>
-              </svg>
-            </button>
-          </form>
+          <div class="header_search_wrapper">
+            <button class="header_search_btn-loc header_search_btn" type="submit">
+                <svg class="header_search_btn-icon">
+                  <use href="./src/images/map-icon.svg"></use>
+                </svg>
+              </button>
+            <form class="header_form">
+            
+              <div class="header_input_wrapper">
+                <input
+                  class="header_input"
+                  type="text"
+                  name="city"
+                  id="city"
+                  placeholder="Find your city..."
+                />
+                <svg class="header_input_icon">
+                  <use href="./src/images/find-icon.svg"></use>
+                </svg>
+              </div>
+              <button class="header_search_btn header_search_btn-q" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+
+          
           <nav class="header_nav">
             <div class="header_nav_wrapper">
               <div class="switcher_wrapper">

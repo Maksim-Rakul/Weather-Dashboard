@@ -59,14 +59,58 @@ export function hideMessage() {
 
 export function converClouds(cloud) {
   if (cloud === 0) {
-    return "clear";
+    return "Сlear";
   } else if (cloud >= 1 && cloud < 20) {
-    return "mostly clear";
+    return "Mostly clear";
   } else if (cloud >= 20 && cloud < 50) {
-    return "changeable cloudiness";
+    return "Changeable cloudiness";
   } else if (cloud >= 50 && cloud < 90) {
-    return "cloudy";
+    return "Cloudy";
   } else {
-    return "darkly";
+    return "Darkly";
+  }
+}
+
+export function convertWind(speed) {
+  if (speed === 0) {
+    return "Calm";
+  } else if (speed >= 1 && speed < 2) {
+    return "Light air";
+  } else if (speed >= 2 && speed < 4) {
+    return "Light breeze";
+  } else if (speed >= 4 && speed < 7) {
+    return "Gentle breeze";
+  } else if (speed >= 7 && speed < 11) {
+    return "Moderate breeze";
+  } else if (speed >= 11 && speed < 16) {
+    return "Fresh breeze";
+  } else if (speed >= 16 && speed < 21) {
+    return "Strong breeze";
+  } else if (speed >= 21 && speed < 27) {
+    return "High wind";
+  } else if (speed >= 27 && speed < 33) {
+    return "Gale";
+  } else if (speed >= 33 && speed < 40) {
+    return "Strong gale";
+  } else if (speed >= 40 && speed < 48) {
+    return "Storm";
+  } else {
+    return "Hurricane";
+  }
+}
+
+export function convertVisibility(visibility) {
+  if (visibility === 0) {
+    return "No visibility";
+  } else if (visibility >= 1 && visibility < 1000) {
+    return "Very poor";
+  } else if (visibility >= 1000 && visibility < 2000) {
+    return "Poor";
+  } else if (visibility >= 2000 && visibility < 5000) {
+    return "Moderate";
+  } else if (visibility >= 5000 && visibility < 10000) {
+    return "Good";
+  } else {
+    return "Excellent";
   }
 }

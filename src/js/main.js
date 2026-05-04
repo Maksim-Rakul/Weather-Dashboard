@@ -4,23 +4,35 @@ import {
   changeTheme,
   dayClickHadler,
   degreeClick,
+  handleLoc,
   handlerSubmit,
 } from "./handlers";
-import {
-  formatWeatherAerr,
-  hideLoader,
-  hideMessage,
-  showLoader,
-  showMessage,
-} from "./helpers";
+import { hideLoader, hideMessage, showLoader, showMessage } from "./helpers";
 import * as refs from "./refs";
-import { render, renderDays, renderValues } from "./render";
-import { getLocationStorage, getTheme, setWeatherStorage } from "./storage";
+import {
+  render,
+  renderDays,
+  renderMainContainer,
+  renderValues,
+} from "./render";
+import {
+  getFahrenheit,
+  getLocationStorage,
+  getTheme,
+  setLocationStorage,
+  setWeatherStorage,
+} from "./storage";
 
 const cityName = getLocationStorage();
 
 if (getTheme() !== "") {
   refs.body.classList.add("theme-light");
+}
+
+if (getFahrenheit() !== "") {
+  refs.fahrenheit.classList.toggle("checked");
+  refs.celsius.classList.toggle("checked");
+  refs.switcherInput.checked = true;
 }
 
 hideLoader();
@@ -34,17 +46,7 @@ if (cityName === "") {
 
   getWeater(cityName)
     .then((data) => {
-      console.log(data);
-
-      const dateArr = formatWeatherAerr(data);
-      setWeatherStorage(dateArr);
-
-      refs.weatherInfo.classList.add("is-vissible");
-      render(dateArr[0], data.city.name);
-      renderDays(dateArr);
-      renderValues(dateArr[0]);
-
-      refs.daysList.children[0].classList.add("chosen_day");
+      renderMainContainer(data);
     })
     .catch((error) => {
       console.log(error);
@@ -59,3 +61,4 @@ refs.daysList.addEventListener("click", dayClickHadler);
 
 refs.switcherTheme.addEventListener("click", changeTheme);
 refs.switcherDegree.addEventListener("click", degreeClick);
+refs.searchByLocationBtn.addEventListener("click", handleLoc);

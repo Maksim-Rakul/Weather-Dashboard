@@ -1,8 +1,13 @@
-import { converClouds, formatDate, khelsi } from "./helpers";
+import {
+  converClouds,
+  convertVisibility,
+  convertWind,
+  formatDate,
+  formatWeatherAerr,
+  khelsi,
+} from "./helpers";
 import * as refs from "./refs";
-import { setLocationStorage } from "./storage";
-
-let cityName;
+import { setLocationStorage, setWeatherStorage } from "./storage";
 
 export function render(
   {
@@ -14,6 +19,8 @@ export function render(
   },
   name,
 ) {
+  console.log(dt_txt);
+
   const mainRender = `
     <div class="weather_today">
             <h2 class="weather_today_city">${name}</h2>
@@ -123,7 +130,7 @@ export function renderValues({
       </div>
       <p class="values_val">${speed}</p>
       <p class="values_type">m/s</p>
-      <p>Good</p>
+      <p>${convertWind(speed)}</p>
     </li>
 
     <li class="values_item">
@@ -146,9 +153,9 @@ export function renderValues({
         </svg>
         <h3 class="values_subtitle">Visibility</h3>
       </div>
-      <p class="values_val">30</p>
+      <p class="values_val">${visibility / 1000}</p>
       <p class="values_type">km</p>
-      <p>Good</p>
+      <p>${convertVisibility(visibility)}</p>
     </li>
 
     <li class="values_item">
@@ -165,4 +172,17 @@ export function renderValues({
   `;
 
   refs.valuesList.innerHTML = renderStr;
+}
+
+export function renderMainContainer(data) {
+  const dateArr = formatWeatherAerr(data);
+  setWeatherStorage(dateArr);
+  setLocationStorage(data.city.name);
+
+  refs.weatherInfo.classList.add("is-vissible");
+  render(dateArr[0], data.city.name);
+  renderDays(dateArr);
+  renderValues(dateArr[0]);
+
+  refs.daysList.children[0].classList.add("chosen_day");
 }
