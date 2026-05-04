@@ -26,7 +26,7 @@ export function render(
             <p class="weather_today_date">${formatDate(dt_txt)}</p>
 
             <div class="weather_today_degree">
-            <img class="weather_today_icon" src="/src/public/images/${icon}.svg" alt="weather icon">
+            <img class="weather_today_icon" src="/${icon}.svg" alt="weather icon">
 
               <div class="weather_today_degree_wrapper">
                 <p class="weather_today_temp">${khelsi(temp)}°</p>
@@ -38,7 +38,7 @@ export function render(
             <ul class="weather_today_list">
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
-            <img class="weather_today_item_icon" src="/src/public/images/water.svg" alt="humidity icon">
+                  <img class="weather_today_item_icon" src="/water.svg" alt="humidity icon">
                   <p class="weather_today_item_type">Humidity</p>
                 </div>
 
@@ -47,7 +47,7 @@ export function render(
 
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
-                  <img class="weather_today_item_icon" src="/src/public/images/wind.svg" alt="wind icon">
+                  <img class="weather_today_item_icon" src="/wind.svg" alt="wind icon">
                   <p class="weather_today_item_type">Wind</p>
                 </div>
 
@@ -56,7 +56,7 @@ export function render(
 
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
-                  <img class="weather_today_item_icon" src="/src/public/images/bar.svg" alt="bar icon">
+                  <img class="weather_today_item_icon" src="/bar.svg" alt="bar icon">
                   <p class="weather_today_item_type">Pressure</p>
                 </div>
 
@@ -65,7 +65,7 @@ export function render(
 
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
-                  <img class="weather_today_item_icon" src="/src/public/images/sun.svg" alt="sun icon">
+                  <img class="weather_today_item_icon" src="/sun.svg" alt="sun icon">
                   <p class="weather_today_item_type">Visibility</p>
                 </div>
 
@@ -90,7 +90,7 @@ export function renderDays(arr) {
         return `
       <li class="weather_days_item" data-id=${index}>
         <p class="weather_days_day">${day}</p>
-        <img class="weather_days_icon" src="/src/public/images/${icon}.svg" alt="day weather icon">
+        <img class="weather_days_icon" src="/${icon}.svg" alt="day weather icon">
         <p class="weather_days_temp"><span class="js-weather_days_temp">${khelsi(temp_max)}</span>°</p>
         <p class="weather_days_feel"><span class="js-weather_days_feel">${khelsi(temp_min)}</span>°</p>
       </li>
@@ -111,7 +111,7 @@ export function renderValues({
   const renderStr = `
     <li class="values_item">
       <div class="values_subtitle_wrapper">
-        <img class="values_icon" src="/src/public/images/50d.svg" alt="wind icon">
+        <img class="values_icon" src="/50d.svg" alt="wind icon">
         <h3 class="values_subtitle">Wind</h3>
       </div>
       <p class="values_val">${speed}</p>
@@ -121,7 +121,7 @@ export function renderValues({
 
     <li class="values_item">
       <div class="values_subtitle_wrapper">
-        <img class="values_icon" src="/src/public/images/water.svg" alt="humidity icon">
+        <img class="values_icon" src="/water.svg" alt="humidity icon">
         <h3 class="values_subtitle">Humidity</h3>
       </div>
       <p class="values_val">${humidity}</p>
@@ -132,7 +132,7 @@ export function renderValues({
 
     <li class="values_item">
       <div class="values_subtitle_wrapper">
-        <img class="values_icon" src="/src/public/images/01d.svg" alt="Visibility icon">
+        <img class="values_icon" src="/01d.svg" alt="Visibility icon">
         <h3 class="values_subtitle">Visibility</h3>
       </div>
       <p class="values_val">${visibility / 1000}</p>
@@ -142,7 +142,7 @@ export function renderValues({
 
     <li class="values_item">
       <div class="values_subtitle_wrapper">
-        <img class="values_icon" src="/src/public/images/04d.svg" alt="Cloudiness icon">
+        <img class="values_icon" src="/04d.svg" alt="Cloudiness icon">
         <h3 class="values_subtitle">Cloudiness</h3>
       </div>
       <p class="values_val">${all}</p>
