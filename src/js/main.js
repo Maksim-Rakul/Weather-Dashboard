@@ -1,3 +1,5 @@
+import "modern-normalize/modern-normalize.css";
+
 import { getWeater } from "./api";
 import { days } from "./const";
 import {

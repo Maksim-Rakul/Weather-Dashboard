@@ -27,7 +27,7 @@ export function render(
 
             <div class="weather_today_degree">
               <svg class="weather_today_icon">
-                <use class="js-today-icon" href="./src/images/weather_icons/${icon}.svg"></use>
+                <use class="js-today-icon" href="/src/public/images/weather_icons/${icon}.svg"></use>
               </svg>
               <div class="weather_today_degree_wrapper">
                 <p class="weather_today_temp">${khelsi(temp)}°</p>
@@ -40,7 +40,7 @@ export function render(
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
                   <svg class="weather_today_item_icon">
-                    <use href="./src/images/water.svg"></use>
+                    <use href="/src/public/images/water.svg"></use>
                   </svg>
                   <p class="weather_today_item_type">Humidity</p>
                 </div>
@@ -51,7 +51,7 @@ export function render(
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
                   <svg class="weather_today_item_icon">
-                    <use href="./src/images/wind.svg"></use>
+                    <use href="/src/public/images/wind.svg"></use>
                   </svg>
                   <p class="weather_today_item_type">Wind</p>
                 </div>
@@ -62,7 +62,7 @@ export function render(
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
                   <svg class="weather_today_item_icon">
-                    <use href="./src/images/bar.svg"></use>
+                    <use href="/src/public/images/bar.svg"></use>
                   </svg>
                   <p class="weather_today_item_type">Pressure</p>
                 </div>
@@ -73,7 +73,7 @@ export function render(
               <li class="weather_today_item">
                 <div class="weather_today_item_wrapper">
                   <svg class="weather_today_item_icon">
-                    <use href="./src/images/sun.svg"></use>
+                    <use href="/src/public/images/sun.svg"></use>
                   </svg>
                   <p class="weather_today_item_type">Visibility</p>
                 </div>
@@ -100,7 +100,7 @@ export function renderDays(arr) {
       <li class="weather_days_item" data-id=${index}>
         <p class="weather_days_day">${day}</p>
         <svg class="weather_days_icon">
-          <use href="./src/images/weather_icons/${icon}.svg"></use>
+          <use href="/src/public/images/weather_icons/${icon}.svg"></use>
         </svg>
         <p class="weather_days_temp"><span class="js-weather_days_temp">${khelsi(temp_max)}</span>°</p>
         <p class="weather_days_feel"><span class="js-weather_days_feel">${khelsi(temp_min)}</span>°</p>
@@ -123,7 +123,7 @@ export function renderValues({
     <li class="values_item">
       <div class="values_subtitle_wrapper">
         <svg class="values_icon">
-          <use href="./src/images/weather_icons/50d.svg"></use>
+          <use href="/src/public/images/weather_icons/50d.svg"></use>
         </svg>
         <h3 class="values_subtitle">Wind</h3>
       </div>
@@ -135,7 +135,7 @@ export function renderValues({
     <li class="values_item">
       <div class="values_subtitle_wrapper">
         <svg class="values_icon">
-          <use href="./src/images/water.svg"></use>
+          <use href="/src/public/images/water.svg"></use>
         </svg>
         <h3 class="values_subtitle">Humidity</h3>
       </div>
@@ -148,7 +148,7 @@ export function renderValues({
     <li class="values_item">
       <div class="values_subtitle_wrapper">
         <svg class="values_icon">
-          <use href="./src/images/weather_icons/01d.svg"></use>
+          <use href="/src/public/images/weather_icons/01d.svg"></use>
         </svg>
         <h3 class="values_subtitle">Visibility</h3>
       </div>
@@ -160,7 +160,7 @@ export function renderValues({
     <li class="values_item">
       <div class="values_subtitle_wrapper">
         <svg class="values_icon">
-          <use href="./src/images/weather_icons/04d.svg"></use>
+          <use href="/src/public/images/weather_icons/04d.svg"></use>
         </svg>
         <h3 class="values_subtitle">Cloudiness</h3>
       </div>
