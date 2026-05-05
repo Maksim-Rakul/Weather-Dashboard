@@ -17,8 +17,7 @@ export async function getWeater(cityName = "Kyiv", lat = "", lon = "") {
     );
     return response.data;
   } catch (error) {
-    iziToast.error({
-      title: "Server error, please, try later",
-    });
+    console.error(error);
+    
   }
 }

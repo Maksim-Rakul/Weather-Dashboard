@@ -3,6 +3,7 @@
 font-weight: 400;
 font-size: 10px;
 color: rgba(255, 255, 255, 0.5);
+padding-bottom: 30px;
 }
 
 .weather_days {
@@ -24,6 +25,8 @@ color: rgba(255, 255, 255, 0.5);
 
 .weather_days_list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
 }
 

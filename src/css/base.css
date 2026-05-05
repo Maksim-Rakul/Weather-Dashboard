@@ -5,13 +5,14 @@ body {
 }
 
 .container {
-  max-width: 1070px;
+  max-width: 375px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 .weather .container {
   display: flex;
+  flex-direction: column;
   gap: 46px;
 }
 
@@ -27,9 +28,9 @@ body {
     text-align: center;
     color: azure;
     font-family: "Cormorant Garamond", sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
-    margin-top: 80px;
+    margin-top: 40px;
     display: none;
 }
 

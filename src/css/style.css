@@ -7,6 +7,7 @@
 @import url(./weather_days.css);
 @import url(./weather_values.css);
 @import url(./light-theme.css);
+@import url(./media_desk.css);
 
 .is-vissible {
   display: block; 

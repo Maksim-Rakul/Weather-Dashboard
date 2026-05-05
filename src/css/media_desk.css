@@ -1,0 +1,25 @@
+@media screen and (min-width: 1080px) {
+  .container {
+    max-width: 1110px;
+  }
+
+  .header_wrapper {
+    flex-direction: row;
+  }
+
+  .header_nav_wrapper {
+    margin: 0;
+  }
+  .weather .container {
+    flex-direction: row;
+  }
+
+  .header_input {
+    width: 500px;
+  }
+
+  .write_message {
+    font-size: 28px;
+    margin-top: 60px;
+  }
+}

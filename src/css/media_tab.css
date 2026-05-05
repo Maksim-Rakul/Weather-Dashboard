@@ -1,0 +1,32 @@
+@media screen and (min-width: 767px) {
+  .container {
+    max-width: 767px;
+  }
+
+  .header_wrapper {
+    flex-direction: row;
+  }
+
+  .header_nav_wrapper {
+    margin: 0;
+    gap: 30px;
+  }
+
+  .header_input {
+    width: 340px;
+  }
+
+  .weather_today {
+    max-width: 100%;
+  }
+
+  .weather_today_list {
+    column-gap: 240px;
+    row-gap: 40px;
+    max-width: 100%;
+  }
+
+  .write_message {
+    font-size: 20px;
+  }
+}
